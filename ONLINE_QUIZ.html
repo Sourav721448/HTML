@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Online Quiz</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<style>
+body{
+margin:20px;
+}
+div{
+border:3px solid black;
+border-radius:20px;
+background-color:yellow;
+padding:10px;
+width:70%;
+position:absolute;
+left:300px;
+}
+h2{
+color:blue;
+margin-bottom: 10px;
+}
+h1{
+color:green;
+}
+p {
+margin-bottom: 5px;
+}
+input[type="radio"] {
+margin-right:5px;
+}
+#submit {
+padding: 10px 20px;
+background-color:green;
+cursor: pointer;
+}
+#result{
+color: red;
+font-size: 18px;
+}
+</style>
+<div>
+<body>
+<h1>Online Quiz</h1>
+<h2>MATHEMATICS :</h2>
+<b><h3>Question 1: 2+2</h3></b>
+<input type="radio" name="q1" value="4">4<br>
+<input type="radio" name="q1" value="6">6<br>
+<input type="radio" name="q1" value="8">8<br>
+<h2>ENGLISH :</h2>
+<b><h3>Question 2:How many alphabets in English? </h3></b>
+<input type="radio" name="q2" value="24"> 24<br>
+<input type="radio" name="q2" value="26"> 26<br>
+<input type="radio" name="q2" value="28"> 28<br>
+<h2>COMPUTER SCIENCE WORKSHOP1 :</h2>
+<b><h3>Question 3:HTML code consists of </h3></b>
+<input type="radio" name="q3" value="Attributes"> Attributes<br>
+<input type="radio" name="q3" value="Elements"> Elements<br>
+<input type="radio" name="q3" value="Tags"> Tags<br>
+<input type="radio" name="q3" value="All of the above"> All of the obove<br>
+<h2>ALGORITHM DESIGN 1 :</h2>
+<b><h3>Question 4:What is the formula for nodes in a binary tree? </h3></b>
+<input type="radio" name="q4" value="2i+1"> 2i+1<br>
+<input type="radio" name="q4" value="2i+2"> 2i+2<br>
+<input type="radio" name="q4" value="2i+3"> 2i+3<br>
+<h2>PROBABILITY AND STATISTICS :</h2>
+<b><h3>Question 5:What is the complement of p(a) </h3></b>
+<input type="radio" name="q5" value="1-p(a)"> 1-p(a)<br>
+<input type="radio" name="q5" value="2-p(a)"> 2-p(a)<br>
+<input type="radio" name="q5" value="3-p(a)"> 3-p(a)<br><br>
+<button id="submit"> Submit</button>
+<h2>Result:</h2>
+<p id="result"></p>
+<script>
+$(document).ready(function() {
+$("#submit").click(function() {
+var marks = 0;
+var q1Answer = $("input[name='q1']:checked").val();
+if (q1Answer === "4") {
+marks += 1;
+}
+var q2Answer = $("input[name='q2']:checked").val();
+if (q2Answer === "24") {
+marks += 1;
+}
+var q3Answer = $("input[name='q3']:checked").val();
+if (q3Answer === "All of the above") {
+marks += 1;
+}
+var q4Answer = $("input[name='q4']:checked").val();
+if (q4Answer === "2i+1") {
+marks += 1;
+}
+var q5Answer = $("input[name='q5']:checked").val();
+if (q5Answer === "1-p(a)") {
+marks += 1;
+}
+$("#result").text("You scored " + marks + " out of 5 .");
+});
+});
+</script>
+</body>
+</div>
+</html>
